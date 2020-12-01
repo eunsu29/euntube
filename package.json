@@ -1,0 +1,11 @@
+{
+  "name": "euntube",
+  "version": "1.0.0",
+  "description": "Cloning Youtube with VanillaJS and NodeJS",
+  "main": "index.js",
+  "author": "Lee Eunsu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
