@@ -15,14 +15,28 @@
     span {
       margin-right: 10px;
       font-size: 20px;
+      align-items: center;
     }
   }
   .social-login--github {
     background-color: $black;
     color: white;
+    a {
+      color: white;
+    }
+  }
+  .social-login--naver {
+    background-color: #1ec800;
+    color: white;
+    a {
+      color: white;
+    }
   }
   .social-login--facebook {
     background-color: #3a5998;
     color: white;
+    a {
+      color: white;
+    }
   }
 }
