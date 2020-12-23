@@ -1,3 +1,5 @@
+const BASE = "http://localhost:4000/";
+
 // Global
 const HOME = "/";
 const JOIN = "/join";
@@ -31,7 +33,13 @@ const FB_CALLBACK = "/auth/facebook/callback";
 const NV = "/auth/naver";
 const NV_CALLBACK = "/auth/naver/callback";
 
+// API
+const API = "/api";
+const REGISTER_VIEW = "/:id/view";
+const ADD_COMMENT = "/:id/comment";
+
 const routes = {
+  base: BASE,
   home: HOME,
   join: JOIN,
   login: LOGIN,
@@ -77,6 +85,9 @@ const routes = {
   facebookCallback: FB_CALLBACK,
   naver: NV,
   naverCallback: NV_CALLBACK,
+  api: API,
+  registerView: REGISTER_VIEW,
+  addComment: ADD_COMMENT,
 };
 
 export default routes;

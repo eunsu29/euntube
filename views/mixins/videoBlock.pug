@@ -7,3 +7,7 @@ mixin videoBlock(video = {})
                 h6.videoBlock__views 1 view
             else
                 h6.videoBlock__views #{video.views} views
+            if video.comments === 1
+                h6.videoBlock__comment 1 comment
+            else
+                h6.videoBlock__comment #{video.comments.length} comments

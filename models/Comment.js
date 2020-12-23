@@ -1,4 +1,3 @@
-import { text } from "body-parser";
 import mongoose from "mongoose";
 
 const CommentSchema = new mongoose.Schema({
@@ -9,6 +8,10 @@ const CommentSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 
