@@ -17,7 +17,9 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `http://localhost:4000${routes.githubCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://boiling-stream-88517.herokuapp.com${routes.githubCallback}`
+        : `http://localhost:4000${routes.githubCallback}`,
     },
     githubLoginCallback
   )
@@ -28,7 +30,9 @@ passport.use(
     {
       clientID: process.env.NV_ID,
       clientSecret: process.env.NV_SECRET,
-      callbackURL: `http://localhost:4000${routes.naverCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://boiling-stream-88517.herokuapp.com${routes.naverCallback}`
+        : `http://localhost:4000${routes.naverCallback}`,
     },
     naverLoginCallback
   )
