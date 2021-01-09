@@ -6,6 +6,7 @@
   "author": "Lee Eunsu",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.9",
     "@babel/node": "^7.12.6",
     "@babel/polyfill": "^7.12.1",
@@ -16,11 +17,13 @@
     "body-parser": "^1.19.0",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "get-blob-duration": "^1.1.2",
     "helmet": "^4.2.0",
     "mongoose": "^5.11.3",
     "morgan": "^1.10.0",
@@ -41,9 +44,15 @@
     "webpack-cli": "^4.2.0"
   },
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore '.scss' --ignore 'static'",
-    "dev:assets": "WEBPACK_ENV=development webpack -w",
-    "build:assets": "WEBPACK_ENV=production webpack",
+    "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static'",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
+    "copyAll": "cp -R src/static build && cp -R src/views build",
+    "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "prebuild": "rm -rf build",
+    "start": "node build/init.js",
+    "prestart": "npm run build",
     "ngrok": "ngrok http 4000"
   },
   "devDependencies": {
