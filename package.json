@@ -10,6 +10,7 @@
     "@babel/core": "^7.12.9",
     "@babel/node": "^7.12.6",
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
     "autoprefixer": "^10.1.0",
     "aws-sdk": "^2.819.0",
     "axios": "^0.21.1",
@@ -51,12 +52,11 @@
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prebuild": "rm -rf build",
-    "start": "node build/init.js",
+    "start": "PRODUCTION=true node build/init.js",
     "prestart": "npm run build",
     "ngrok": "ngrok http 4000"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.0.0",
