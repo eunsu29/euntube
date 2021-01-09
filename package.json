@@ -51,9 +51,7 @@
     "build:assets": "cd src && WEBPACK_ENV=production webpack",
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prebuild": "rm -rf build",
     "start": "PRODUCTION=true node build/init.js",
-    "prestart": "npm run build",
     "ngrok": "ngrok http 4000"
   },
   "devDependencies": {
