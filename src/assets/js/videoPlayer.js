@@ -162,9 +162,5 @@ function init() {
 }
 
 if (videoContainer) {
-  document.onreadystatechange = () => {
-    if (document.readyState === "complete") {
-      init();
-    }
-  };
+  init();
 }
