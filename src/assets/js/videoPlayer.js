@@ -137,7 +137,7 @@ function handleDrag(event) {
   }
 }
 
-function init() {
+async function init() {
   videoPlayer.volume = 0.5;
 
   playBtn.addEventListener("click", handlePlayClick);
@@ -149,7 +149,7 @@ function init() {
 
   fullScrnBtn.addEventListener("click", goFullScreen);
 
-  videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  await videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("timeupdate", getCurrentTime);
   videoPlayer.addEventListener("ended", handleEnded);
 
