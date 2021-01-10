@@ -149,7 +149,7 @@ function init() {
 
   fullScrnBtn.addEventListener("click", goFullScreen);
 
-  // videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("timeupdate", getCurrentTime);
   videoPlayer.addEventListener("ended", handleEnded);
 
@@ -163,5 +163,4 @@ function init() {
 
 if (videoContainer) {
   init();
-  setTotalTime();
 }
