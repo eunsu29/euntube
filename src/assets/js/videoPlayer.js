@@ -149,7 +149,11 @@ function init() {
 
   fullScrnBtn.addEventListener("click", goFullScreen);
 
-  videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  document.onreadystatechange = () => {
+    if (document.readyState === "complete") {
+      videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+    }
+  };
   videoPlayer.addEventListener("timeupdate", getCurrentTime);
   videoPlayer.addEventListener("ended", handleEnded);
 
