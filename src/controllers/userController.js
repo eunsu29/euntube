@@ -61,6 +61,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
 
 export const postGithubLogin = (req, res) => {
   res.redirect(routes.home);
+  req.flash("success", "Welcome");
 };
 
 // Naver Login
@@ -94,6 +95,7 @@ export const naverLoginCallback = async (_, __, profile, cb) => {
 
 export const postNaverLogin = (req, res) => {
   res.redirect(routes.home);
+  req.flash("success", "Welcome");
 };
 
 // Facebook Login
